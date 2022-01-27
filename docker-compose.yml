@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  eth-net-intelligence-api:
+    image: iexechub/eth-net-intelligence-api
+    container_name: eth-net-intelligence-api
+    environment:
+      - NODE_ENV=production
+      - RPC_HOST=${RPC_HOST}
+      - RPC_PORT=8545
+      - LISTENING_PORT=30303
+      - INSTANCE_NAME=${INSTANCE_NAME}
+      - CONTACT_DETAILS=${CONTACT_DETAILS}
+      - WS_SERVER=${WS_SERVER}
+      - WS_SECRET=${WS_SECRET}
+      - VERBOSITY=1
+    restart: unless-stopped
